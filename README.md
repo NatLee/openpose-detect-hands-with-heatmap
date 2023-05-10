@@ -88,6 +88,8 @@ model
     docker-compose build && docker-compose up
     ```
 
+    The result will be generated in the folder `./tmp`.
+
 ## Contributor
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
