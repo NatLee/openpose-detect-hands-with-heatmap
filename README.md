@@ -1,6 +1,6 @@
 <div align="center" style="text-align: center">
 
-# **Detect Hands By Using Open Pose with Heat Map**
+# **OpenPose Detect Hands with Heatmap**
 
 <p style="text-align: center">
   <img align="center" src="./doc/original-frame.png" alt="frame" width="30%" height="100%">
@@ -11,6 +11,8 @@
 </div>
 
 > Source from [요룰레히 9_21- HEYYEYAAEYAAAEYAEYAA (What's Up)](https://www.youtube.com/watch?v=u6w9HYmQMgQ)
+
+This is a simply application for using OpenPose model for detecting hands and showing the heatmap.
 
 ## Model
 
@@ -36,6 +38,49 @@ model
 1. Prepare the model from [#Model](#model).
 
 2. Prepare your video in `./data` named `test.mp4`.
+    The directory will like below:
+
+    ```
+    .
+    ├── data
+    │   ├── README.md
+    │   └── test.mp4 <--- Your video
+    ├── doc
+    │   ├── heatmap-motion.gif
+    │   ├── heatmap.png
+    │   └── original-frame.png
+    ├── docker-compose.yml
+    ├── Dockerfile
+    ├── LICENSE
+    ├── model
+    │   └── weights.h5 <--- The model
+    ├── README.md
+    ├── requirements.txt
+    └── src
+        ├── convert-png-to-gif.py
+        ├── docker-entrypoint.sh
+        ├── main.py
+        ├── openpose
+        │   ├── __init__.py
+        │   ├── model.py
+        │   ├── OpenposeModel.py
+        │   ├── prediction.py
+        │   └── util.py
+        └── utils
+            ├── draw_heat.py
+            ├── FPS.py
+            ├── heatmapper
+            │   ├── assets
+            │   │   ├── 450pxdot.png
+            │   │   ├── default.png
+            │   │   └── reveal.png
+            │   ├── heatmapper.py
+            │   └── __init__.py
+            ├── __init__.py
+            └── ROIs.py
+
+    8 directories, 28 files
+    ```
 
 3. Just run docker command with the following:
 
