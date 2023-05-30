@@ -108,6 +108,11 @@ model
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
+## Reference
+
+- Heatmap package is from [HeatMappy](https://github.com/LumenResearch/heatmappy/tree/master/heatmappy).
+- The version of keras with Open Pose model is from [Open-Pose-Keras](https://github.com/cchamber/Open-Pose-Keras).
+
 ## LICENSE
 
 [AFLv3](LICENSE)
