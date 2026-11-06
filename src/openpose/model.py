@@ -1,11 +1,7 @@
-from keras.models import Model
-from keras.layers.merge import Concatenate
-from keras.layers import Activation, Input, Lambda
-from keras.layers.convolutional import Conv2D
-from keras.layers.pooling import MaxPooling2D
-from keras.layers.merge import Multiply
-from keras.regularizers import l2
-from keras.initializers import RandomNormal, constant
+from tf_keras.models import Model
+from tf_keras.layers import Concatenate, Activation, Input, Lambda, Conv2D, MaxPooling2D, Multiply
+from tf_keras.regularizers import l2
+from tf_keras.initializers import RandomNormal, constant
 
 stages = 6
 np_branch1 = 38

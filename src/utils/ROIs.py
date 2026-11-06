@@ -11,24 +11,15 @@ class ROIs():
         for points_in_a_polygon in self.points_for_each_polygons:
             self.polygons.append(Polygon(points_in_a_polygon))
 
-        self.region_masks = list()
-        self.GET_MASK = False
+        self._mask = None
 
     def get_mask_frame(self, frame):
-
-        if not self.GET_MASK:
-            #show_image_masks = list()
-            for points_in_a_polygon in self.points_for_each_polygons:
-                roi_points = np.array(points_in_a_polygon, np.int32).reshape((-1, 1, 2))
-                mask = cv2.polylines(np.zeros(frame.shape, np.uint8), [roi_points], True, (255, 255, 255), 2)
-                self.region_masks.append(cv2.fillPoly(mask.copy(), [roi_points], (255, 255, 255)))
-                #show_image_masks.append(cv2.fillPoly(mask.copy(), [roi_points], (0, 255, 0)))
-            self.GET_MASK = True
-
-        roi = np.zeros(frame.shape, np.uint8)
-        for region_mask in self.region_masks:
-            roi = roi + cv2.bitwise_and(frame, region_mask)
-        return roi
+        if self._mask is None or self._mask.shape != frame.shape[:2]:
+            self._mask = np.zeros(frame.shape[:2], np.uint8)
+            for points in self.points_for_each_polygons:
+                roi_points = np.array(points, np.int32).reshape((-1, 1, 2))
+                cv2.fillPoly(self._mask, [roi_points], 255)
+        return cv2.bitwise_and(frame, frame, mask=self._mask)
 
     def is_a_point_in_all_polygons(self, point: tuple) -> bool:
         for polygon in self.polygons:
