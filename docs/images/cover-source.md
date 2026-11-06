@@ -9,7 +9,7 @@ embedded demo images keep their original source files listed below.
 - [`doc/original-frame.png`](../../doc/original-frame.png)
 - [`doc/heatmap.png`](../../doc/heatmap.png)
 
-Only typography, framing and scaling are applied. The embedded demo is unchanged; framing and resizing do not create a new model run or benchmark.
+The original demo images receive only typography, framing and scaling. The embedded demo is unchanged; framing and resizing do not create a new model run or benchmark.
 
 ## Export
 
@@ -27,3 +27,12 @@ The embedded frames retain the historical
 [source-video credit](https://www.youtube.com/watch?v=u6w9HYmQMgQ).
 Only framing, resizing and typography are added; pose/heatmap pixels are not retouched.
 The original frame, heatmap and animation remain in `doc/`.
+
+## Decorative element
+
+[`cover-element.png`](cover-element.png) is a separate transparent object illustration.
+It is composed into the editable SVG as a small accent, with a faint dot pattern
+and theme color. It does not replace or retouch the original demo images.
+
+The final accent uses objects rather than an illustrated person. Text remains
+editable SVG, and the PNG export keeps the existing README image path.
