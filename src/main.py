@@ -6,13 +6,15 @@ from utils import draw_heat, FPS, ROIs
 from pathlib import Path
 
 if __name__ == '__main__':
-    
+
     om = OpenposeModel('/model/weights.h5')
     cap = cv2.VideoCapture('/data/test.mp4')
+    if not cap.isOpened():
+        raise FileNotFoundError('Cannot open /data/test.mp4')
 
     frame_pass = 30
     offset = -5
-    
+
     # =====================
     # ROIs
     points_for_each_polygons = [
@@ -45,7 +47,7 @@ if __name__ == '__main__':
                         point = (point[0], point[1]+offset)
                         if rois.is_a_point_in_all_polygons(point):
                             all_frame_points.append(point)
-                            
+
                 roi = rois.get_mask_frame(frame)
                 frame = cv2.addWeighted(src1=frame, alpha=0.5, src2=roi, beta=0.5, gamma=0)
 
@@ -72,7 +74,7 @@ if __name__ == '__main__':
     print("[INFO] approx. FPS: {:.2f}".format(fps.fps()))
 
     get_non_zero_dots = [poly for poly in polys if len(poly)>0]
-    
+
     all_frame_points = list()
     offset = 0
     for frame_dots in get_non_zero_dots:
@@ -81,5 +83,7 @@ if __name__ == '__main__':
             all_frame_points.append((point[0], point[1]+offset))
 
     # draw all points into first frame
+    if not Path('/tmp/00000.png').is_file():
+        raise RuntimeError('Video produced no readable frames')
     draw_heat('/tmp/00000.png', '/tmp/00000.heatmap.png', all_frame_points)
 

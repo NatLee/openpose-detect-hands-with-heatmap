@@ -1,0 +1,9 @@
+.git
+docs
+tests
+.github
+.env
+data
+model
+training
+__pycache__

@@ -3,7 +3,7 @@ import cv2
 import math
 import numpy as np
 from .util import padRightDownCorner
-from scipy.ndimage.filters import gaussian_filter
+from scipy.ndimage import gaussian_filter
 
 # find connection in the specified sequence, center 29 is in the position 15
 limbSeq = [[2, 3], [2, 6], [3, 4], [4, 5], [6, 7], [7, 8], [2, 9], [9, 10], \
@@ -90,7 +90,7 @@ def process(heatmap_avg, paf_avg, thre1=0.1, thre2=0.05):
     special_k = []
     mid_num = 10
     # code.interact(local=locals())
-    
+
     for k in range(len(mapIdx)):
         score_mid = paf_avg[:, :, [x - 19 for x in mapIdx[k]]]
         candA = all_peaks[limbSeq[k][0] - 1]
