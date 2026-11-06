@@ -74,7 +74,7 @@ code/model terms separately.
 <p><img src="doc/original-frame.png" width="40%" alt="Original historical source frame" /> <img src="doc/heatmap.png" width="40%" alt="Original saved heatmap overlay" /></p>
 
 Both source files remain unchanged. The animated demo and source-video credit
-below are retained; cover processing adds only layout and scaling.
+are retained; cover processing adds only layout and scaling.
 
 ## Development and verification
 
