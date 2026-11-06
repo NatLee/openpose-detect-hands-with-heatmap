@@ -1,6 +1,6 @@
 # OpenPose Wrist Motion Heatmaps
 
-![OpenPose motion heatmaps — conceptual project cover](docs/images/cover.png)
+![OpenPose motion heatmaps — project cover](docs/images/cover.png)
 
 Accumulate body-pose wrist regions from a video and draw their motion as heatmaps.
 The historical repository name says “hands”, but the network is the body OpenPose
@@ -60,13 +60,21 @@ every scene. The all-video summary uses the original demo's unshifted points.
 
 The historical demo frames come from
 [the credited source video](https://www.youtube.com/watch?v=u6w9HYmQMgQ).
-The new cover is conceptual artwork and does not reuse those frames.
+The cover reuses these original frames with framing and typography; the frame
+and heatmap files are unchanged.
 The heatmap implementation derives from
 [HeatMappy](https://github.com/LumenResearch/heatmappy/tree/master/heatmappy),
 and the pose implementation from
 [Open-Pose-Keras](https://github.com/cchamber/Open-Pose-Keras).
 See [LICENSE](LICENSE) for the repository's AFL-3.0 license and review upstream
 code/model terms separately.
+
+## Original frame and heatmap
+
+<p><img src="doc/original-frame.png" width="40%" alt="Original historical source frame" /> <img src="doc/heatmap.png" width="40%" alt="Original saved heatmap overlay" /></p>
+
+Both source files remain unchanged. The animated demo and source-video credit
+are retained; cover processing adds only layout and scaling.
 
 ## Development and verification
 
@@ -78,8 +86,8 @@ python -m pytest -q
 ```
 
 The local CPU regression suite passes 3 tests. Tests build the actual body network and check output channels, overlapping ROI intensity, frame resizing and point/boundary membership. They do not measure pose accuracy or run an end-to-end pretrained video inference.
-GitHub Actions repeats the tests on Python 3.12. The cover is conceptual artwork;
-it does not show measured model results.
+GitHub Actions repeats the tests on Python 3.12. The cover uses an editable layout; source assets and export instructions are in
+[cover-source.md](docs/images/cover-source.md).
 
 ## Contributor
 
