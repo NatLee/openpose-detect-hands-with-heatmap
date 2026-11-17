@@ -56,7 +56,7 @@ every scene. The all-video summary uses the original demo's unshifted points.
 
 ## Historical example and references
 
-![Historical motion visualization](doc/heatmap-motion.gif)
+![Historical motion visualization](docs/images/heatmap-motion.gif)
 
 The historical demo frames come from
 [the credited source video](https://www.youtube.com/watch?v=u6w9HYmQMgQ).
@@ -71,7 +71,7 @@ code/model terms separately.
 
 ## Original frame and heatmap
 
-<p><img src="doc/original-frame.png" width="40%" alt="Original historical source frame" /> <img src="doc/heatmap.png" width="40%" alt="Original saved heatmap overlay" /></p>
+<p><img src="docs/images/original-frame.png" width="40%" alt="Original historical source frame" /> <img src="docs/images/heatmap.png" width="40%" alt="Original saved heatmap overlay" /></p>
 
 Both source files remain unchanged. The animated demo and source-video credit
 are retained; cover processing adds only layout and scaling.
